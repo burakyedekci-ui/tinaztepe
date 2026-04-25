@@ -3,7 +3,7 @@
 Bu depo, Dokuz Eylül Üniversitesi Tınaztepe Kampüsü için üretilen piksel tabanlı çevresel verilerin betimleyici istatistiklerini, parametrik olmayan testlerini, mekânsal bağımlılık analizlerini ve figürlerini üretmek için düzenlenmiştir.
 
 ## Beklenen ham veri dosyaları
-`data_raw/` klasörü içine şu iki dosya yerleştirilmelidir:
+`data_raw/` klasörü içine şu üç dosya yerleştirilmelidir:
 
 - `deu_kampus_piksel_2024_tumdegiskenler.csv`
 - `deu_fakulte_piksel_2024_tumdegiskenler.csv`
