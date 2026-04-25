@@ -1,9 +1,10 @@
 # DEU Tınaztepe Kampüsü Analizi
 
-Bu depo, Dokuz Eylül Üniversitesi Tınaztepe Kampüsü için üretilen piksel tabanlı çevresel verilerin betimleyici istatistiklerini, parametrik olmayan testlerini, mekânsal bağımlılık analizlerini ve figürlerini üretmek için düzenlenmiştir.
+Bu depo, Dokuz Eylül Üniversitesi Tınaztepe Kampüsü için üretilen piksel tabanlı çevresel verilerin betimleyici istatistiklerini, parametrik olmayan testlerini, mekânsal bağımlılık analizlerini, NDBI yeniden örnekleme duyarlılık kontrolünü ve figürlerini üretmek için düzenlenmiştir.
 
 ## Beklenen ham veri dosyaları
-`data_raw/` klasörü içine şu üç dosya yerleştirilmelidir:
+
+`data_raw/` klasörü içine şu dosyalar yerleştirilmelidir:
 
 - `deu_kampus_piksel_2024_tumdegiskenler.csv`
 - `deu_fakulte_piksel_2024_tumdegiskenler.csv`
@@ -18,17 +19,17 @@ Kök dizindeki `index.html`, web arayüzünü çalıştırmak için iki CSV dosy
 
 Bu nedenle kök dizindeki iki CSV web sunumu için korunmuştur. R analizlerinde kullanılan düzenli ham veri kopyaları `data_raw/` klasöründe yer almaktadır.
 
-## Klasör yapısı
+## Google Earth Engine iş akışı
 
-- `data_raw/` : ham CSV dosyaları
-- `data_processed/` : temizlenmiş RDS çıktıları
-- `scripts/` : çalıştırılabilir R scriptleri
-- `tables/` : CSV tablo çıktıları
-- `figures/` : makale ve ek figürler
-- `output/` : gerektiğinde geçici çıktılar
-- `archive/` : eski sürümler ve kullanılmayan dosyalar
+Google Earth Engine kodları `scripts/gee/` klasörü altında üç ayrı dosya halinde düzenlenmiştir:
 
-## Çalıştırma sırası
+- `01_gee_csv_export.js`: Kampüs ve fakülte düzeyindeki piksel CSV dosyalarını üretir.
+- `02_gee_raster_export.js`: NDVI, NDBI, GLCM contrast ve GLCM homogeneity raster çıktılarını üretir.
+- `03_gee_ndbi_sensitivity_export.js`: NDBI yeniden örnekleme duyarlılık kontrolü için nearest neighbor ve bilinear CSV çıktısını üretir.
+
+## R analiz iş akışı
+
+R kodları `scripts/` klasörü altında modüler biçimde düzenlenmiştir:
 
 1. `scripts/00_config.R`
 2. `scripts/01_prepare_data.R`
@@ -42,11 +43,4 @@ Bu nedenle kök dizindeki iki CSV web sunumu için korunmuştur. R analizlerinde
 Tek komutla çalıştırmak için:
 
 ```r
-source("run_all.R")
-```
-
-## Notlar
-
-- Scriptler göreli klasör yapısıyla çalışır. Bilgisayara özel mutlak dosya yolu kullanılmaz.
-- Paket kurulumları otomatik zorlanmaz. Gerekli paketler `00_config.R` içinde denetlenir ve eksik paketler açık biçimde bildirilir.
-- Aynı analitik akış tek dosyada yığılmamış, üretim mantığına göre bölünmüştür.
+source("scripts/run_all.R")
