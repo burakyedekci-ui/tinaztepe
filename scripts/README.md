@@ -36,12 +36,6 @@ Tek komutla çalıştırmak için:
 source("run_all.R")
 ```
 
-
-## Arşiv notu
-
-`archive/00_kurtarilan_kod.R` dosyası, RStudio oturumundan kurtarılan ham kaynaktır.
-Bu dosya yalnızca yedek amaçlı tutulur; GitHub'a doğrudan yüklenecek sürüm `scripts/` klasörü altındaki temiz dosyalardır.
-
 ## Notlar
 
 - Scriptler göreli klasör yapısıyla çalışır. Bilgisayara özel mutlak dosya yolu kullanılmaz.
