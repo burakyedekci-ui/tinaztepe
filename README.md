@@ -7,6 +7,7 @@ Bu depo, Dokuz Eylül Üniversitesi Tınaztepe Kampüsü için üretilen piksel 
 
 - `deu_kampus_piksel_2024_tumdegiskenler.csv`
 - `deu_fakulte_piksel_2024_tumdegiskenler.csv`
+- `deu_fakulte_ndbi_duyarlilik_2024.csv`
 
 ## Klasör yapısı
 
@@ -27,12 +28,19 @@ Bu depo, Dokuz Eylül Üniversitesi Tınaztepe Kampüsü için üretilen piksel 
 5. `scripts/04_spatial_analysis.R`
 6. `scripts/05_main_figures.R`
 7. `scripts/06_appendix_figures.R`
+8. `scripts/07_ndbi_sensitivity_analysis.R`
 
 Tek komutla çalıştırmak için:
 
 ```r
-source("scripts/run_all.R")
+source("run_all.R")
 ```
+
+
+## Arşiv notu
+
+`archive/00_kurtarilan_kod.R` dosyası, RStudio oturumundan kurtarılan ham kaynaktır.
+Bu dosya yalnızca yedek amaçlı tutulur; GitHub'a doğrudan yüklenecek sürüm `scripts/` klasörü altındaki temiz dosyalardır.
 
 ## Notlar
 
