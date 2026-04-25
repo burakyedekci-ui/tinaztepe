@@ -9,7 +9,7 @@ Bu depo, Dokuz Eylül Üniversitesi Tınaztepe Kampüsü için üretilen piksel 
 - `deu_fakulte_piksel_2024_tumdegiskenler.csv`
 - `deu_fakulte_ndbi_duyarlilik_2024.csv`
 
-- ## Web arayüzü notu
+## Web arayüzü notu
 
 Kök dizindeki `index.html`, web arayüzünü çalıştırmak için iki CSV dosyasını aynı dizinden çağırmaktadır:
 
